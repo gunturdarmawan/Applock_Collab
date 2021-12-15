@@ -4,6 +4,7 @@
     package="com.example.applock">
 
     <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
@@ -16,9 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Applock">
-        
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PatternLockAct"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +49,6 @@
         <service android:name=".services.ServiceAppLockJObIntent"
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE"/>
-
 
     </application>
 
